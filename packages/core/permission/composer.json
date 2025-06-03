@@ -1,0 +1,16 @@
+{
+  "name": "core/permission",
+  "description": "Core Permission Package",
+  "autoload": {
+    "psr-4": {
+      "Core\\Permission\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Core\\Permission\\PermissionServiceProvider.php"
+      ]
+    }
+  }
+}
