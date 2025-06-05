@@ -15,12 +15,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    
-    $keys = Redis::connection('sentinel')->keys('*');
-    $value = Redis::connection('sentinel')->get('kienlt');
-    $value2 = Redis::connection('sentinel')->get('test2');
-    dump($value);
-    dump($value2);
-    dd($keys);
     return view('welcome');
 });

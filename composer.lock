@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8a3174510d50537eaad0007e3dffd80d",
+    "content-hash": "5fd079281fa9131abc2218ea16080af3",
     "packages": [
         {
             "name": "brick/math",
@@ -3174,6 +3174,35 @@
                 }
             ],
             "time": "2024-04-27T21:32:50+00:00"
+        },
+        {
+            "name": "skeleton/core",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "packages/skeleton/core",
+                "reference": "ae6510142c45e1c456f290ee47ea410a868af923"
+            },
+            "require": {
+                "php": ">=8.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Skeleton\\Core\\CoreServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Skeleton\\Core\\": "src/"
+                }
+            },
+            "description": "Core package skeleton",
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "symfony/console",

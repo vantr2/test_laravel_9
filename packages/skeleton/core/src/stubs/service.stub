@@ -1,0 +1,15 @@
+<?php
+
+namespace vendor_namespace\package_namespace\App\Services;
+
+/**
+ * Class service_namespaceService
+ * @package vendor_namespace\package_namespace\App\Services
+ */
+class repository_namespaceService
+{
+    public function __construct()
+    {
+
+    }
+}

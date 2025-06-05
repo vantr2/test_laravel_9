@@ -1,0 +1,4 @@
+# vendor_name/package_name Package for Laravel
+
+## Cài đặt package ##
+`composer require vendor_name/package_name`

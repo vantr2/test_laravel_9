@@ -1,0 +1,11 @@
+<?php
+
+namespace vendor_namespace\package_namespace\App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\Routing\Controller as BaseController;
+
+class controller_namespaceController extends BaseController
+{
+
+}

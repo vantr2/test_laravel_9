@@ -1,0 +1,8 @@
+<?php
+
+namespace vendor_namespace\package_namespace\App\Helpers;
+
+class package_namespaceHelper
+{
+
+}
