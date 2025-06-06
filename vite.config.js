@@ -8,7 +8,6 @@ export default defineConfig({
         laravel({
             input: [
                 'packages/core/frontend/src/vuejs/js/app.js',
-                'packages/project/src/vuejs/js/project.js',
             ],
             refresh: true,
         }),

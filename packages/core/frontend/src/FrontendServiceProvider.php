@@ -4,6 +4,7 @@ namespace Core\Frontend;
 
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class FrontendServiceProvider extends ServiceProvider
@@ -28,6 +29,8 @@ class FrontendServiceProvider extends ServiceProvider
         Log::info('[FrontendServiceProvider] booted');
         $this->loadRoutesFrom(__DIR__ . '/routes/web.php');
         $this->loadViewsFrom(__DIR__ . '/views', 'v-' . $this->package);
+
+        View::share('layoutName', 'desktop');
     }
 
     /**

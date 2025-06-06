@@ -1,4 +1,4 @@
-@extends('v-frontend::layouts.desktop')
+@extends('v-frontend::layouts.' . $layoutName)
 
 @push('vite')
     @vite([

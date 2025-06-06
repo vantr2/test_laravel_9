@@ -1,5 +1,5 @@
-@extends('v-frontend::layouts.desktop')
+@extends('v-frontend::layouts.' . $layoutName)
 
 @section('content')
-    <p>Thuần file blade content</p>
+    <p class="text-success">Thuần file blade content</p>
 @endsection

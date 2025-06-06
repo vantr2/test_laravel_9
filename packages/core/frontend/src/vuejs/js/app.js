@@ -1,8 +1,10 @@
 import { createApp } from 'vue'
 import AppLayout from './components/AppLayout.vue'
 
-// Optional: import SCSS (nếu bạn dùng nội dung SCSS ở layout)
+import './bootstrap.js'; // Load cấu hình chung trước
 import '../sass/app.scss'
+import * as bootstrap from 'bootstrap'; // Nhập JS
+window.bootstrap = bootstrap; // Gán vào window để sử dụng toàn cục
 
 const app = createApp({
   // Root instance config (optional)
