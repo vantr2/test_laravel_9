@@ -6,6 +6,8 @@
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
+        "core/frontend": "^1.0",
+        "core/project": "^1.0",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
@@ -68,6 +70,14 @@
         {
             "type": "path",
             "url": "packages/skeleton/core"
+        },
+        {
+            "type": "path",
+            "url": "packages/core/project"
+        },
+        {
+            "type": "path",
+            "url": "packages/core/frontend"
         }
     ]
 }

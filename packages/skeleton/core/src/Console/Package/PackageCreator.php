@@ -296,7 +296,7 @@ class PackageCreator {
         $srcDirectory = $directory . DIRECTORY_SEPARATOR . $this->srcDirectory;
 
         $packageName = $this->getPackage();
-        $packageData = explode('-', $packageName);
+        $packageData = explode('-', string: $packageName);
 
         $replaces = array(
             '$PACKAGE_LAST_NAME$' => ucfirst($packageData[count($packageData) - 1]),

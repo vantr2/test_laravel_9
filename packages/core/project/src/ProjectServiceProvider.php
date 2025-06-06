@@ -1,21 +1,21 @@
 <?php
 
-namespace vendor_namespace\package_namespace;
+namespace Core\Project;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
-class package_classServiceProvider extends ServiceProvider
+class ProjectServiceProvider extends ServiceProvider
 {
     /**
      * @var string
      */
-    protected $vendor = 'vendor_directory';
+    protected $vendor = 'core';
 
     /**
      * @var string
      */
-    protected $package = 'package_directory';
+    protected $package = 'project';
 
     protected $namespace = __NAMESPACE__ . '\App\Http\Controllers';
 

@@ -1,21 +1,22 @@
 <?php
 
-namespace vendor_namespace\package_namespace;
+namespace Core\Frontend;
 
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
-class package_classServiceProvider extends ServiceProvider
+class FrontendServiceProvider extends ServiceProvider
 {
     /**
      * @var string
      */
-    protected $vendor = 'vendor_directory';
+    protected $vendor = 'core';
 
     /**
      * @var string
      */
-    protected $package = 'package_directory';
+    protected $package = 'frontend';
 
     protected $namespace = __NAMESPACE__ . '\App\Http\Controllers';
 
@@ -24,6 +25,7 @@ class package_classServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        Log::info('[FrontendServiceProvider] booted');
         $this->loadRoutesFrom(__DIR__ . '/routes/web.php');
         $this->loadViewsFrom(__DIR__ . '/views', 'v-' . $this->package);
     }

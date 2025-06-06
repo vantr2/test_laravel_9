@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5fd079281fa9131abc2218ea16080af3",
+    "content-hash": "765e3a8f22389ffb19b493f2ff883282",
     "packages": [
         {
             "name": "brick/math",
@@ -129,6 +129,118 @@
                 }
             ],
             "time": "2024-02-09T16:56:22+00:00"
+        },
+        {
+            "name": "core/frontend",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "packages/core/frontend",
+                "reference": "3e86a00e402c8edfee3ebf94aa52560c1f0ae768"
+            },
+            "require": {
+                "php": "8.1.*"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9.5",
+                "phpunit/phpunit": "4.*"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Core\\Frontend\\FrontendServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Core\\Frontend\\": "src",
+                    "Core\\Frontend\\App\\": "src/app"
+                },
+                "files": [
+                    "src/app/Helpers/FrontendHelper.php"
+                ]
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Core\\Frontend\\Test\\": "tests"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "vendor/bin/phpunit"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "crm bizfly",
+                    "email": "crm.bizfly@vccorp.vn"
+                }
+            ],
+            "description": "frontend",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "core/project",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "packages/core/project",
+                "reference": "1dc2c67d6b8bc592eee26acc4b30b2d445c613bc"
+            },
+            "require": {
+                "php": "8.1.*"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9.5",
+                "phpunit/phpunit": "4.*"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Core\\Project\\ProjectServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Core\\Project\\": "src",
+                    "Core\\Project\\App\\": "src/app"
+                },
+                "files": [
+                    "src/app/Helpers/ProjectHelper.php"
+                ]
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Core\\Project\\Test\\": "tests"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "vendor/bin/phpunit"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "crm bizfly",
+                    "email": "crm.bizfly@vccorp.vn"
+                }
+            ],
+            "description": "project",
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "dflydev/dot-access-data",
