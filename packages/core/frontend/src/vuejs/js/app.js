@@ -3,8 +3,9 @@ import AppLayout from './components/AppLayout.vue'
 
 import './bootstrap.js'; // Load cấu hình chung trước
 import '../sass/app.scss'
-import * as bootstrap from 'bootstrap'; // Nhập JS
-window.bootstrap = bootstrap; // Gán vào window để sử dụng toàn cục
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 const app = createApp({
   // Root instance config (optional)
