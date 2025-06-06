@@ -2,12 +2,15 @@
 
 @push('vite')
     @vite([
-        'packages/project/src/vuejs/js/project.js',
+        'packages/core/project/src/vuejs/js/project.js',
     ])
 @endpush
 
 @section('content')
-    <h1>Hẻe</h1>
+    <h2>Code này ở blade của core/project (content)</h2>
     <div id="project-app">
+        <project>
+
+        </project>
     </div>
 @endsection

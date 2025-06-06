@@ -11,5 +11,8 @@ const app = createApp({
 // Register layout component
 app.component('Project', Project)
 
-// Mount Vue vào phần `@yield('content')` đã được blade inject trong #project-app
-app.mount('#project-app')
+try {
+    app.mount('#project-app');
+} catch (error) {
+    console.error('Failed to mount Vue project app:', error);
+}

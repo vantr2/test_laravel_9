@@ -11,5 +11,10 @@ const app = createApp({
 // Register layout component
 app.component('AppLayout', AppLayout)
 
-// Mount Vue vào phần `@yield('content')` đã được blade inject trong #app-vue
-app.mount('#app-vue')
+try {
+    app.mount('#app-vue');
+    document.getElementById("app-loading")?.classList.add("hidden");
+} catch (error) {
+    console.error('Failed to mount Vue app:', error);
+    document.getElementById("app-loading")?.classList.add("hidden");
+}

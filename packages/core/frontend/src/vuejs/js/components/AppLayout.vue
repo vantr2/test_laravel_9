@@ -1,9 +1,15 @@
 <template>
   <div class="app-layout">
-    <header><h1>CRM Layout</h1></header>
+    <header>
+        <h2>AppLayout.vue</h2>
+        <p>Header</p>
+    </header>
     <main>
       <slot></slot> <!-- Đây là phần Blade content sẽ nằm -->
     </main>
+    <footer>
+        <h2>Footer file layout</h2>
+    </footer>
   </div>
 </template>
 

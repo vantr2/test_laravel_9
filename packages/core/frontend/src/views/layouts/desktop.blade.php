@@ -8,7 +8,7 @@
     @stack('vite')
 
     @vite([
-        'packages/frontend/src/vuejs/js/app.js',
+        'packages/core/frontend/src/vuejs/js/app.js',
     ])
 </head>
 <body>
