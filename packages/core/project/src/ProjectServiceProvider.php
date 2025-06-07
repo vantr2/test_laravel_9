@@ -35,23 +35,6 @@ class ProjectServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //if
-        $features =  [
-                    'report' => 'Core\Report\ReportServiceProvider::class'
-            ];
 
-        if(config('features.enabled.report')) {
-            foreach ($features as $key => $value ) {
-                dd($value);
-                if (class_exists($value)) {
-                    $this->app->register($value);
-                } else {
-                    \Log::warning("Feature {$key} is enabled but class {$value} does not exist.");
-                    dd('a');
-                }
-
-            }
-
-        }
     }
 }
