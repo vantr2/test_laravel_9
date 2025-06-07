@@ -6,9 +6,11 @@
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
+        "core/feature" : "^1.0",
         "core/frontend": "^1.0",
-        "core/report": "^1.0",
         "core/project": "^1.0",
+        "core/report": "^1.0",
+
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
@@ -68,9 +70,14 @@
     "minimum-stability": "stable",
     "prefer-stable": true,
     "repositories": [
+
         {
             "type": "path",
             "url": "packages/skeleton/core"
+        },
+        {
+            "type": "path",
+            "url": "packages/core/feature"
         },
         {
             "type": "path",

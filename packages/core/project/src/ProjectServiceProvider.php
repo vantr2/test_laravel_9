@@ -2,6 +2,7 @@
 
 namespace Core\Project;
 
+use Core\Report\ReportServiceProvider;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
@@ -26,9 +27,7 @@ class ProjectServiceProvider extends ServiceProvider
     {
         $this->loadRoutesFrom(__DIR__ . '/routes/web.php');
         $this->loadViewsFrom(__DIR__ . '/views', 'v-' . $this->package);
-        config([
-            'features.enabled.' . 'report' => true,
-        ]);
+
     }
 
     /**
@@ -36,6 +35,23 @@ class ProjectServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        //if
+        $features =  [
+                    'report' => 'Core\Report\ReportServiceProvider::class'
+            ];
+
+        if(config('features.enabled.report')) {
+            foreach ($features as $key => $value ) {
+                dd($value);
+                if (class_exists($value)) {
+                    $this->app->register($value);
+                } else {
+                    \Log::warning("Feature {$key} is enabled but class {$value} does not exist.");
+                    dd('a');
+                }
+
+            }
+
+        }
     }
 }

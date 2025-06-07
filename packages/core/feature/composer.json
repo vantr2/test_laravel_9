@@ -1,6 +1,6 @@
 {
-    "name": "core/report",
-    "description": "report",
+    "name": "core/feature",
+    "description": "feature",
     "version": "1.0.0",
     "license": "MIT",
     "authors": [
@@ -18,16 +18,16 @@
     },
     "autoload": {
         "psr-4": {
-            "Core\\Report\\": "src",
-            "Core\\Report\\App\\": "src/app"
+            "Core\\Feature\\": "src",
+            "Core\\Feature\\App\\": "src/app"
         },
         "files": [
-            "src/app/Helpers/ReportHelper.php"
+
         ]
     },
     "autoload-dev": {
       "psr-4": {
-        "Core\\Report\\Test\\": "tests"
+        "Core\\Frontend\\Test\\": "tests"
       }
     },
     "scripts": {
@@ -39,6 +39,7 @@
     "extra": {
         "laravel": {
             "providers": [
+                "Core\\Feature\\FeatureServiceProvider"
             ]
         }
     }

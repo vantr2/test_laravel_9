@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "58e815db51d30bff868ba9df1a151243",
+    "content-hash": "5734946215c0f4dd8e9d4d3efe8b4155",
     "packages": [
         {
             "name": "brick/math",
@@ -131,6 +131,60 @@
             "time": "2024-02-09T16:56:22+00:00"
         },
         {
+            "name": "core/feature",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "packages/core/feature",
+                "reference": "706f714b9e83325d6353981e8f6805aa6febe339"
+            },
+            "require": {
+                "php": "8.1.*"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9.5",
+                "phpunit/phpunit": "4.*"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Core\\Feature\\FeatureServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Core\\Feature\\": "src",
+                    "Core\\Feature\\App\\": "src/app"
+                },
+                "files": []
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Core\\Frontend\\Test\\": "tests"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "vendor/bin/phpunit"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "crm bizfly",
+                    "email": "crm.bizfly@vccorp.vn"
+                }
+            ],
+            "description": "feature",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
             "name": "core/frontend",
             "version": "1.0.0",
             "dist": {
@@ -248,7 +302,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/core/report",
-                "reference": "0ec31bb6de0d54e87d6f13cd516ee15aa8d4558e"
+                "reference": "67712716bca43da3728a6e5fb809dd653d5867cf"
             },
             "require": {
                 "php": "8.1.*"
@@ -260,9 +314,7 @@
             "type": "library",
             "extra": {
                 "laravel": {
-                    "providers": [
-                        "Core\\Report\\ReportServiceProvider"
-                    ]
+                    "providers": []
                 }
             },
             "autoload": {

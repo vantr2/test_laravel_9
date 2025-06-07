@@ -2,7 +2,7 @@
 
 namespace Core\Report;
 
-use Core\Report\App\Services\ReportService;
+use Core\Report\App\Services\ProjectFeatureService;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
@@ -26,10 +26,8 @@ class ReportServiceProvider extends ServiceProvider implements DeferrableProvide
      */
     public function boot()
     {
-        if (config('features.enabled.' . $this->package)) { // <-- Dòng mới
             $this->loadRoutesFrom(__DIR__ . '/routes/web.php');
             $this->loadViewsFrom(__DIR__ . '/views', 'v-' . $this->package);
-        }
     }
 
     /**

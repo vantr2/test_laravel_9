@@ -2,7 +2,6 @@
 
 namespace Core\Report\App\Http\Controllers;
 
-use Core\Report\App\Services\ReportService;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 
@@ -14,10 +13,8 @@ class ReportController extends BaseController
             'name' => 'from Package'
         ]);
     }
-
     public function list()
     {
-          $report = new ReportService();
           return view('v-report::list', [
             'name' => 'Listing'
         ]);
