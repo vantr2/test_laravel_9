@@ -1,0 +1,8 @@
+{
+    "entries": [
+        "src/vuejs/js/project.js"
+    ],
+    "aliases": {
+        "@project": "src/vuejs/js"
+    }
+}

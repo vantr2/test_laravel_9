@@ -1,0 +1,8 @@
+{
+    "entries": [
+        "src/vuejs/js/app.js"
+    ],
+    "aliases": {
+        "@frontend": "src/vuejs/js"
+    }
+}

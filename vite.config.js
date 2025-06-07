@@ -2,22 +2,52 @@ import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 import vue from '@vitejs/plugin-vue';
 import path from 'path';
+import fs from 'fs';
+import glob from 'fast-glob';
+
+// Hàm đọc tất cả cấu hình (entries và aliases) từ các package
+function getPackageConfigs() {
+    const entrypointFiles = glob.sync('packages/**/vite.config.json');
+
+    // Dùng reduce để tổng hợp inputs và aliases từ tất cả các file
+    return entrypointFiles.reduce((acc, file) => {
+        const packageDir = path.dirname(file);
+        const content = JSON.parse(fs.readFileSync(file, 'utf-8'));
+
+        // Xử lý entries
+        if (content.entries && Array.isArray(content.entries)) {
+            const absoluteEntries = content.entries.map(relativePath =>
+                path.resolve(packageDir, relativePath)
+            );
+            acc.inputs.push(...absoluteEntries);
+        }
+
+        // Xử lý aliases
+        if (content.aliases && typeof content.aliases === 'object') {
+            for (const alias in content.aliases) {
+                const relativePath = content.aliases[alias];
+                acc.aliases[alias] = path.resolve(packageDir, relativePath);
+            }
+        }
+
+        return acc;
+    }, { inputs: [], aliases: {} }); // Giá trị khởi tạo
+}
+
+// Lấy cấu hình động từ các package
+const packageConfigs = getPackageConfigs();
 
 export default defineConfig({
     plugins: [
         laravel({
-            input: [
-                'packages/core/frontend/src/vuejs/js/app.js',
-                'packages/core/project/src/vuejs/js/project.js',
-            ],
+            input: packageConfigs.inputs,
             refresh: true,
         }),
         vue(),
     ],
     resolve: {
         alias: {
-            '@frontend': path.resolve(__dirname, 'packages/frontend/src/vuejs/js'),
-            '@project': path.resolve(__dirname, 'packages/project/src/vuejs/js'),
+            ...packageConfigs.aliases,
             'vue': 'vue/dist/vue.esm-bundler.js'
         },
     },
