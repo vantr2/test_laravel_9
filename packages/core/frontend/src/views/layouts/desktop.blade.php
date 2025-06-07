@@ -12,10 +12,11 @@
     ])
 </head>
 <body>
-    <div id="app-loading">
-        Đang tải ứng dụng...
-    </div>
-    <div id="app-vue">
+    <style>
+        [v-cloak] { display: none; }
+    </style>
+
+    <div id="app-vue" v-cloak>
         <app-layout>
             @yield('content')
         </app-layout>
