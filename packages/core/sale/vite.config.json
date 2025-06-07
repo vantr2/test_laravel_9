@@ -1,0 +1,7 @@
+{
+    "entries": [
+    ],
+    "aliases": {
+        "@sale": "src/vuejs/js"
+    }
+}
