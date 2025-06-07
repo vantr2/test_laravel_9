@@ -9,6 +9,8 @@ export default defineConfig({
             input: [
                 'packages/core/frontend/src/vuejs/js/app.js',
                 'packages/core/project/src/vuejs/js/project.js',
+                'packages/core/report/src/vuejs/js/report.js',
+
             ],
             refresh: true,
         }),
@@ -18,6 +20,8 @@ export default defineConfig({
         alias: {
             '@frontend': path.resolve(__dirname, 'packages/frontend/src/vuejs/js'),
             '@project': path.resolve(__dirname, 'packages/project/src/vuejs/js'),
+            '@report': path.resolve(__dirname, 'packages/report/src/vuejs/js'),
+
             'vue': 'vue/dist/vue.esm-bundler.js'
         },
     },
